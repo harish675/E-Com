@@ -85,7 +85,6 @@ module.exports.removeProduct = async function(req,res){
 }
 
 // view product
-
 module.exports.viewProduct = async function(req,res){
     
      try{
@@ -114,4 +113,47 @@ module.exports.viewProduct = async function(req,res){
      }
 
 }
+
+//update product
+module.exports.updateProduct = async function(req,res){
+    
+     try{
+         const productId = req.params.id;
+         const name = req.body.name;
+         const price = req.body.price;
+         const category = req.body.category;
+         const description = req.body.description;
+
+         const updatedProduct = await Product.findByIdAndUpdate(productId ,{ 
+              name:name,
+              price:price,
+              category:category,
+              description:description, 
+         },
+         { new: true }
+         );
+         if(!updatedProduct){
+             console.log("Product not Found");
+             return res.status(404).json({
+                  message:"Product not Found",
+             })
+         }
+         console.log("Product is updated Successfully" ,updatedProduct);
+
+         return res.status(200).json({
+              message:"Product Updated Successfully",
+              data:updatedProduct
+         })
+
+     }catch(err){
+        console.log("Error in updating  the product" ,err);
+        
+        return res.status(500).json({
+             message:"Internal Server Error",
+        })
+     }
+}
+
+
+
 
