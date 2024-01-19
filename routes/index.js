@@ -8,6 +8,7 @@ router.get('/',function(req,res){
 
 })
 router.use('/products' , require('./product'));
+router.use('/user',require('./user'));
 
 
 
