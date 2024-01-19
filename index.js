@@ -4,6 +4,11 @@ const app = express();
 const db = require('./config/mongoose');
 
 
+app.use(express.urlencoded());
+//router
+app.use('/',require('./routes'));
+
+
 app.listen(port , function(err){
     
      if(err){ 
