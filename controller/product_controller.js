@@ -70,11 +70,7 @@ module.exports.removeProduct = async function(req,res){
                   message:"Product deleted Successfully",
                   data:deletedProduct,
              })
-
           }
-           
-         
-
       }
       catch(err){
         
@@ -87,3 +83,35 @@ module.exports.removeProduct = async function(req,res){
       }
 
 }
+
+// view product
+
+module.exports.viewProduct = async function(req,res){
+    
+     try{
+        const productId = req.params.id;
+        const product = await Product.findById(productId);
+        if(!product){
+             console.log("Product not Found");
+
+             return res.status(404).json({
+                  message:"Product not found",
+             })
+        }else{ 
+             console.log("Product is found");
+
+             return res.status(200).json({
+                  message:"The product viewed Successfully",
+                  data:product,
+             })
+        }
+     }
+     catch(err){
+          console.log("Error in finding and viewings the product",err);
+          return res.status(500).json({
+               message : "Internal Server Error",
+         })
+     }
+
+}
+
