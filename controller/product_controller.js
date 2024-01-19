@@ -13,6 +13,7 @@ const Product = require('../model/product');
  */
 
 
+//create product
 module.exports.createProduct = async function(req,res){
      try{
          const name = req.body.name;
@@ -42,5 +43,47 @@ module.exports.createProduct = async function(req,res){
           })
 
      };
+
+}
+
+//delete Product
+
+module.exports.removeProduct = async function(req,res){
+    
+      try{
+          const productId = req.params.id;
+        
+          //find the product 
+          const deletedProduct = await Product.findByIdAndDelete(productId);
+
+          if(!deletedProduct){
+             console.log("Product not Found");
+             return res.status(404).json({
+                  message:'Product not Found',
+             })
+          }
+          else{
+            
+             console.log("Product deleted Successfully" , deletedProduct);
+
+             return res.status(200).json({
+                  message:"Product deleted Successfully",
+                  data:deletedProduct,
+             })
+
+          }
+           
+         
+
+      }
+      catch(err){
+        
+          console.log("Error in deleting the the Product" , err);
+
+          return res.status(500).json({
+               message:"Internal Server Error",
+          })
+
+      }
 
 }
