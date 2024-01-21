@@ -113,7 +113,6 @@ module.exports.viewProduct = async function(req,res){
      }
 
 }
-
 //update product
 module.exports.updateProduct = async function(req,res){
     
@@ -144,7 +143,6 @@ module.exports.updateProduct = async function(req,res){
               message:"Product Updated Successfully",
               data:updatedProduct
          })
-
      }catch(err){
         console.log("Error in updating  the product" ,err);
         
