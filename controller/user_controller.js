@@ -15,6 +15,7 @@ const User = require('../model/user');
 
 
 
+//creating user
 module.exports.createUser = async function(req,res){
     
     try{
@@ -56,5 +57,20 @@ module.exports.createUser = async function(req,res){
         })
 
     }
+
+}
+
+//create session for user
+
+module.exports.createSession = async function(req,res){
+    
+     console.log("User signed in successfully");
+     
+   const user = req.user;
+     return res.status(200).json({
+         message:"user login successfully",
+         data:user
+     })
+    
 
 }
