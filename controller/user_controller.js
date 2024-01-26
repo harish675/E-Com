@@ -65,8 +65,7 @@ module.exports.createUser = async function(req,res){
 module.exports.createSession = async function(req,res){
     
      console.log("User signed in successfully");
-     
-   const user = req.user;
+     const user = req.user;
      return res.status(200).json({
          message:"user login successfully",
          data:user
