@@ -2,15 +2,22 @@
 <html>
      
       <head>
-
+ 
+          <link rel="stylesheet" href="/css/layout.css">
+         
+          <%-style %>
       </head>
 
        <body>
+               <header id="header">
+                    <%- include('header');%>
+               </header>
+             
                 <main id="main">
              
                      <%- body %>
                      
                 </main>
-
+                <%- script %>
        </body>
 </html>
