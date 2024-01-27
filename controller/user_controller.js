@@ -73,3 +73,11 @@ module.exports.createSession = async function(req,res){
     
 
 }
+
+//rendering login page for user
+
+module.exports.loginPage = function(req,res){
+       
+     return res.render('loginPage');
+
+}
