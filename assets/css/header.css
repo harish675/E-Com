@@ -80,6 +80,7 @@ header{
   text-decoration: none;
 }
 #nav-bar ul li .user-btn-menu{
+
       display: none;
       position: absolute;
       background: #ffff;
@@ -87,6 +88,7 @@ header{
       width: 200px;
       border: 1px solid #cccc;
       margin: 0px;
+      margin-top: 42px;
       padding: 10px;
       box-shadow: 0 2px 5px rgb(0,0,0,0.2);
 }
@@ -94,4 +96,23 @@ header{
      
      display: block;
 
+}
+.user-btn {
+      /* border: 2px solid red; */
+      width: 100px;
+      height: 40px;
+      text-align: center;    
+      display: flex; 
+}
+ 
+/* require  to  handle the hover effect of this  */
+.user-btn  a{
+      
+     margin-top: 7px;
+     margin-left: 18px;
+     color: rgb(22, 18, 18);
+
+}
+.user-btn-menu a{
+      font-size: 18px;
 }
