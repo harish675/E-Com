@@ -30,24 +30,37 @@ header{
      height: 50px;
      width: 510px;
      margin-left: -60px;
+     display: flex;
 }
 
 #search-bar input{
     
+    
     height: 38px;
-    width: 98%;
+    width: 95%;
     margin: 1.5%;
     background-color: aliceblue;
     border-color: transparent;
     border-radius: 12px;
-    text-align: left;
+    text-align: center;
     font-size: 17px;
+    margin-left: px;
+    padding: 10px;
+}
+
+#search-bar i{
+     
+      position: absolute;
+      font-size: 22px;
+      color: gray;
+      margin-top: 16px;
+      margin-left: 20px;
 }
 
 #nav-bar{
      width: 450px;
      height: 60px;
-     border: 1px solid red;
+     /* border: 1px solid red; */
      margin-left: 20px;
 }
 
@@ -63,7 +76,22 @@ header{
       list-style: none;
       font-size: 20px;
 }
-#nav-bar ul li a{
-     
+#nav-bar ul li a{    
   text-decoration: none;
+}
+#nav-bar ul li .user-btn-menu{
+      display: none;
+      position: absolute;
+      background: #ffff;
+      height: 200px;
+      width: 200px;
+      border: 1px solid #cccc;
+      margin: 0px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgb(0,0,0,0.2);
+}
+#nav-bar ul li:hover .user-btn-menu{
+     
+     display: block;
+
 }
